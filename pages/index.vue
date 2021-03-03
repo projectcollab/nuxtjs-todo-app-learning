@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { mapMutations, mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   data() {
@@ -73,8 +73,14 @@ export default {
     //   // this.$delete(this.todos, index)
     //   this.$store.commit('todos/remove', todo)
     // },
-    ...mapMutations({
-      removeTodo: 'todos/remove',
+    // ...mapMutations({
+    //   removeTodo: 'todos/remove',
+    // }),
+    // removeTodo(todo) {
+    //   this.$store.dispatch('todos/removeTodo', todo)
+    // },
+    ...mapActions({
+      removeTodo: 'todos/removeTodo',
     }),
   },
 }

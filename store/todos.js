@@ -19,6 +19,9 @@ export const actions = {
   addTodo: ({ commit }, text) => {
     commit('add', text)
   },
+  removeTodo: ({ commit }, todo) => {
+    commit('remove', todo)
+  },
 }
 
 export const getters = {
