@@ -48,7 +48,6 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   data() {
     return {
-      // todos: ['Todo 1', 'Todo 2', 'Todo 3', 'Todo 4'],
       todoValue: '',
     }
   },
@@ -63,22 +62,9 @@ export default {
   },
   methods: {
     addTodo() {
-      // this.todos.push(this.todoValue)
-      // this.$store.commit('todos/add', this.todoValue)
-      // Best practice is to wrap mutations in a action!
       this.$store.dispatch('todos/addTodo', this.todoValue)
       this.todoValue = ''
     },
-    // removeTodo(todo) {
-    //   // this.$delete(this.todos, index)
-    //   this.$store.commit('todos/remove', todo)
-    // },
-    // ...mapMutations({
-    //   removeTodo: 'todos/remove',
-    // }),
-    // removeTodo(todo) {
-    //   this.$store.dispatch('todos/removeTodo', todo)
-    // },
     ...mapActions({
       removeTodo: 'todos/removeTodo',
     }),
